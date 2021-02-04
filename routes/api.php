@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
 Route::apiResource('marcas', 'MarcaController');
 Route::apiResource('modelos', 'ModeloController');
-///books/53/ratings será usado para avaliar o marca com o ID de 53
 Route::post('marcas/{marca}/modelos', 'ModeloController@store');

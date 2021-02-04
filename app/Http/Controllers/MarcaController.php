@@ -34,7 +34,7 @@ class MarcaController extends Controller
         return response()->json(['error' => 'You can only edit your own Marcas.'], 403);
       }
 
-      $Marca->update($request->only(['nome', 'descrcao']));
+      $Marca->update($request->only(['nome', 'descricao']));
 
       return new MarcaResource($Marca);
     }
